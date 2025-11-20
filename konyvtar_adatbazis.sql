@@ -16,3 +16,13 @@ CREATE TABLE konyvek (
     kategoria ENUM('fantasy', 'sci-fi', 'disztópia', 'történelem'),
     ertekeles FLOAT DEFAULT 5.0
 );
+
+-- 4.feladat
+CREATE TABLE olvasok (
+    id INTEGER PRIMARY KEY NOT NULL,
+    nev  VARCHAR(100) NOT NULL,
+    szuletesi_datum DATE, 
+    varos VARCHAR(50) DEFAULT 'Budapest',
+    aktiv DEFAULT 'igen',
+    regisztracio_idopontja 
+);

@@ -1,4 +1,5 @@
 -- 2.feladat
+DROP DATABASE IF EXISTS konyvtaradatbazis;
 CREATE DATABASE konyvtaradatbazis 
     CHARACTER SET utf8mb4 
     COLLATE utf8mb4_hungarian_ci;
@@ -7,7 +8,8 @@ CREATE DATABASE konyvtaradatbazis
 USE konyvtaradatbazis;
 
 -- 4.feladat
-CREATE TABLE konyvek (
+DROP TABLE IF EXISTS konyvek;
+CREATE TABLE IF NOT EXISTS konyvek (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     cim  VARCHAR(200) NOT NULL UNIQUE,
     szerzo VARCHAR(120),
@@ -18,7 +20,8 @@ CREATE TABLE konyvek (
 );
 
 -- 5.feladat
-CREATE TABLE olvasok (
+DROP TABLE IF EXISTS olvasok;
+CREATE TABLE IF NOT EXISTS olvasok (
     id INTEGER PRIMARY KEY NOT NULL,
     nev  VARCHAR(100) NOT NULL,
     szuletesi_datum DATE, 

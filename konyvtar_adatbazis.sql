@@ -13,16 +13,19 @@ CREATE TABLE konyvek (
     szerzo VARCHAR(120),
     kiadasi_ev YEAR, 
     oldalszam INTEGER CHECK (oldalszam BETWEEN 20 AND 2000),
-    kategoria ENUM('fantasy', 'sci-fi', 'disztópia', 'történelem'),
+    kategoria ENUM ('fantasy', 'sci-fi', 'disztópia', 'történelem'),
     ertekeles FLOAT DEFAULT 5.0
 );
 
--- 4.feladat
+-- 5.feladat
 CREATE TABLE olvasok (
     id INTEGER PRIMARY KEY NOT NULL,
     nev  VARCHAR(100) NOT NULL,
     szuletesi_datum DATE, 
     varos VARCHAR(50) DEFAULT 'Budapest',
-    aktiv DEFAULT 'igen',
-    regisztracio_idopontja 
+    aktiv ENUM ('igen', 'nem') DEFAULT 'igen',
+    regisztracio_idopontja DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+--6.feladat
+DESCRIBE konyvek;
